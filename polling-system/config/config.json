@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "Avnish123",
+    "database": "polling_system",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "Avnish123",
+    "database": "polling_system",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "Avnish123",
+    "database": "polling_system",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

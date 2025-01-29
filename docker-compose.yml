@@ -1,0 +1,32 @@
+version: '3'
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper:3.4.6
+    ports:
+      - "2181:2181"
+  kafka:
+    image: wurstmeister/kafka:latest
+    environment:
+      KAFKA_ADVERTISED_LISTENER: INSIDE:9093
+      KAFKA_LISTENER: INSIDE://kafka:9093
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    ports:
+      - "9093:9093"
+  backend:
+    build: .
+    environment:
+      KAFKA_BROKER: kafka:9093
+      DB_HOST: db
+    ports:
+      - "3000:3000"
+    depends_on:
+      - kafka
+      - zookeeper
+      - db
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: polling_system
+    ports:
+      - "5432:5432"
