@@ -25,20 +25,17 @@ Clone this repository to your local machine:
 
 bash
 Copy
-git clone https://github.com/your-username/backend-polling-system.git
+https://github.com/avnishrai569/polling_system.git
 Navigate to the project folder:
 
 bash
 Copy
-cd backend-polling-system
+cd polling-system
 Install the necessary dependencies:
 
 bash
 Copy
 npm install
-
-
-
 
 Got it! Here's the updated README reflecting the use of PostgreSQL instead of MongoDB:
 
@@ -259,21 +256,7 @@ Copy
     { "option": "C++", "votes": 2 }
   ]
 }
-4. User Authentication (Optional)
-Endpoint: POST /api/auth/login
-Request Body:
-json
-Copy
-{
-  "username": "user123",
-  "password": "securepassword"
-}
-Response:
-json
-Copy
-{
-  "token": "jwt-token-here"
-}
+
 Real-Time Updates with Socket.IO
 The backend utilizes Socket.IO to emit real-time updates when a vote is cast or a poll result changes. The frontend can listen to these updates and immediately reflect the changes to the user interface.
 
